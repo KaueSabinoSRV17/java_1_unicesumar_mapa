@@ -1,0 +1,8 @@
+services:
+  app:
+    image: gradle:jdk8
+    working_dir: /app
+    command: tail -f
+    user: 1000:1000
+    volumes:
+      - .:/app
