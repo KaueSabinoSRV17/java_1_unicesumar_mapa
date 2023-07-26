@@ -25,8 +25,6 @@ public abstract class Exams {
 
     public abstract String showResult();
 
-    public abstract void registerExam();
-
     public String getPatientName() {
         return patientName;
     }

@@ -53,14 +53,10 @@ public class CholesterolExam extends Exams {
     @Override
     public String showResult() {
         String ldlResult = "HDL Level: " + formatLevel(this.ldlByMgDl, goodLdlLevel);
-        String hdlResult = "HDL Level: " + formatLevel(this.hdlByMgDl, goodHdlLevel);
-        return ldlResult + "\n" + hdlResult;
-    }
-
-    @Override
-    public void registerExam() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registerExam'");
+        String hdlResult = "LDL Level: " + formatLevel(this.hdlByMgDl, goodHdlLevel);
+        String fullResult = hdlResult + "\n" + ldlResult;
+        System.out.println(fullResult);
+        return fullResult;
     }
 
     private String handleGoodOrBadLevel(boolean isGood) {

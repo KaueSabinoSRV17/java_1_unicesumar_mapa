@@ -25,12 +25,6 @@ public class BloodSugarExam extends Exams {
         return result;
     }
 
-    @Override
-    public void registerExam() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registerExam'");
-    }
-
     private String handleResult() {
         if (glucoseByMgDl < 100) {
             return "Normoglycemia";

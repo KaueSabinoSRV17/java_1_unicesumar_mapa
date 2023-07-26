@@ -32,12 +32,6 @@ public class TriglyceridesExam extends Exams {
         return result;
     }
 
-    @Override
-    public void registerExam() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registerExam'");
-    }
-
     private String handleResult() {
         if (this.triglycerideByMdDl > 150) {
             return "Bad";

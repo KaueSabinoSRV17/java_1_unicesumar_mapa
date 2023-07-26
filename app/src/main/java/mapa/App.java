@@ -3,12 +3,38 @@
  */
 package mapa;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.util.Calendar;
+import java.util.Date;
 
+import mapa.exams.BloodSugarExam;
+import mapa.exams.BloodType;
+import mapa.exams.CholesterolExam;
+import mapa.exams.TriglyceridesExam;
+import mapa.exams.CholesterolExam.CholesterolRisk;
+
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // Calendar Configurtion
+        Calendar twentyYearsOldCalender = Calendar.getInstance();
+        twentyYearsOldCalender.add(Calendar.YEAR, -20);
+
+        // Fictional Data
+        String name = "Joe Doe";
+        BloodType bloodType = BloodType.AB_NEGATIVE;
+        Date twentyYearsOldDate = twentyYearsOldCalender.getTime();
+
+        // Running each Exam
+        BloodSugarExam bloodSugarExam = new BloodSugarExam(name, bloodType, twentyYearsOldDate, 110);
+        bloodSugarExam.classifyResult();
+        bloodSugarExam.showResult();
+
+        CholesterolExam cholesterolExam = new CholesterolExam(name, bloodType, twentyYearsOldDate, 47, 99, CholesterolRisk.MEDIUM);
+        cholesterolExam.classifyResult();
+        cholesterolExam.showResult();
+
+        TriglyceridesExam triglyceridesExam = new TriglyceridesExam(name, bloodType, twentyYearsOldDate, 74);
+        triglyceridesExam.classifyResult();
+        triglyceridesExam.showResult();
+
     }
 }
