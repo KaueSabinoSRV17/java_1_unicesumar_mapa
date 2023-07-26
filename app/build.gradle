@@ -32,6 +32,14 @@ java {
     }
 }
 
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'mapa.App'
+    )
+  }
+}
+
 application {
     // Define the main class for the application.
     mainClass = 'mapa.App'
